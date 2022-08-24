@@ -31,4 +31,8 @@ export class CartComponent implements OnInit {
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
   }
+
+  onDelete(productId: number): void {
+    this.items = this.cartService.deleteItem(productId);
+  }
 }

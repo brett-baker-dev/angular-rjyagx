@@ -5,8 +5,10 @@
 </p>
 
 <div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
+  <span>{{ item.product.name }}</span>
+  <span>{{ item.product.price | currency }}</span>
+  <span>{{ item.cnt }}</span>
+  <button type="button" (click)="onDelete(item.product.id)">Delete</button>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
